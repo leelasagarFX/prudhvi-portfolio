@@ -10,7 +10,7 @@ const outfit = Outfit({
 
 export const metadata: Metadata = {
   title: "Prudhvi Raju",
-  description: "Awwwards-winning interactive interface",
+  // description: "Awwwards-winning interactive interface",
 };
 
 export default function RootLayout({
