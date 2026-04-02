@@ -8,13 +8,13 @@ import Image from "next/image";
 const projects = [
   {
     title: "Trifecta Veranza",
-    description: "An expansive 6-acre residential development featuring two majestic towers. Offers world-class amenities including a premium clubhouse, an active cricket ground, and widespread landscaped spaces.",
+    description: "This architectural design project is currently in its developmental phase, focusing on conceptual planning and spatial organization. The design explores innovative use of form, function, and sustainability while responding to the site context and user needs. Ongoing work includes refining structural details, material selection, and environmental strategies to achieve a cohesive and functional final outcome.",
     tags: ["High-rise", "Master Planning", "Luxury Lifestyle", "Amenities"],
     link: "#",
     github: "#",
     media: [
-      { type: "image", url: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=2000&auto=format&fit=crop" },
-      { type: "image", url: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2000&auto=format&fit=crop" },
+      { type: "image", url: "https://drive.google.com/file/d/184o953LIdpZ7eFd6dWIC3ZqdBeLqjjBY/view?usp=sharing" },
+      { type: "image", url: "https://drive.google.com/file/d/1iQQgFkvQ3V0v4xvPht_3rpHY0-meT9_F/view?usp=sharing" },
     ],
     color: "from-blue-500/20 to-indigo-500/20"
   },
