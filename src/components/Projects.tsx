@@ -8,13 +8,13 @@ import Image from "next/image";
 const projects = [
   {
     title: "Trifecta Veranza",
-    description: "This architectural design project is currently in its developmental phase, focusing on conceptual planning and spatial organization. The design explores innovative use of form, function, and sustainability while responding to the site context and user needs. Ongoing work includes refining structural details, material selection, and environmental strategies to achieve a cohesive and functional final outcome.",
+    description: "A landmark 36-floor twin-tower luxury residential development, designed to redefine modern urban living with striking architecture, thoughtfully planned residences, and an extensive range of premium amenities. Set within a vibrant urban environment, Trifecta Veranza seamlessly blends contemporary aesthetics, elevated lifestyles, landscaped spaces, and resort-inspired comforts to create a sophisticated residential experience. This design project is currently in its developmental phase, focusing on conceptual planning and spatial organization. The design explores innovative use of form, function, and sustainability while responding to the site context and user needs. Ongoing work includes refining structural details, material selection, and environmental strategies to achieve a cohesive and functional final outcome.",
     tags: ["High-rise", "Master Planning", "Luxury Lifestyle", "Amenities"],
-    link: "#",
+    link: "https://trifecta-veranza.vercel.app/",
     github: "#",
     media: [
-      { type: "image", url: "https://drive.google.com/file/d/184o953LIdpZ7eFd6dWIC3ZqdBeLqjjBY/view?usp=sharing" },
-      { type: "image", url: "https://drive.google.com/file/d/1iQQgFkvQ3V0v4xvPht_3rpHY0-meT9_F/view?usp=sharing" },
+      { type: "image", url: "https://drive.google.com/file/d/1YEHUf3cZ8qCkfe8gqF-zpcF87CS-JtK3/view?usp=sharing" },
+      { type: "image", url: "https://drive.google.com/file/d/1IwpGvy9ipINaybZotWGAy_Y4MECGx-Fc/view?usp=drive_link" },
     ],
     color: "from-blue-500/20 to-indigo-500/20"
   },
@@ -122,6 +122,7 @@ function ProjectCard({ project, index, onSelectStack }: { project: typeof projec
                     alt={project.title}
                     fill
                     unoptimized
+                    referrerPolicy="no-referrer"
                     className="object-cover"
                   />
                 )}
@@ -228,7 +229,7 @@ export default function Projects() {
                       <video key={activeStack.media[activeStack.index].url} src={activeStack.media[activeStack.index].url} autoPlay loop controls className="w-full h-full object-contain" />
                     )
                   ) : (
-                    <Image src={activeStack.media[activeStack.index].url.includes("drive.google.com/file/d/") ? `https://drive.google.com/thumbnail?id=${activeStack.media[activeStack.index].url.split('/file/d/')[1].split('/')[0]}&sz=w1920-h1080` : activeStack.media[activeStack.index].url} alt="Zoomed view" fill unoptimized className="object-contain" />
+                    <Image src={activeStack.media[activeStack.index].url.includes("drive.google.com/file/d/") ? `https://drive.google.com/thumbnail?id=${activeStack.media[activeStack.index].url.split('/file/d/')[1].split('/')[0]}&sz=w1920-h1080` : activeStack.media[activeStack.index].url} alt="Zoomed view" fill unoptimized referrerPolicy="no-referrer" className="object-contain" />
                   )}
                 </motion.div>
               </AnimatePresence>

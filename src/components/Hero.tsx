@@ -33,28 +33,28 @@ export default function Hero() {
     const hoverRadius = 150; // Radius of mouse interaction
 
     let mouse = { x: -1000, y: -1000 };
-    
+
     const handleMouseMove = (e: MouseEvent) => {
-        mouse.x = e.clientX;
-        mouse.y = e.clientY;
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
     };
     const handleMouseLeave = () => {
-        mouse.x = -1000;
-        mouse.y = -1000;
+      mouse.x = -1000;
+      mouse.y = -1000;
     };
 
     window.addEventListener("mousemove", handleMouseMove);
     window.addEventListener("mouseleave", handleMouseLeave);
 
     let dots: { x: number; y: number; baseX: number; baseY: number }[] = [];
-    
+
     const initDots = () => {
-        dots = [];
-        for (let x = 0; x < width; x += spacing) {
-            for (let y = 0; y < height; y += spacing) {
-                dots.push({ x, y, baseX: x, baseY: y });
-            }
+      dots = [];
+      for (let x = 0; x < width; x += spacing) {
+        for (let y = 0; y < height; y += spacing) {
+          dots.push({ x, y, baseX: x, baseY: y });
         }
+      }
     };
     initDots();
 
@@ -64,32 +64,32 @@ export default function Hero() {
       ctx.clearRect(0, 0, width, height);
 
       dots.forEach(dot => {
-          const dx = mouse.x - dot.baseX;
-          const dy = mouse.y - dot.baseY;
-          const dist = Math.sqrt(dx * dx + dy * dy);
+        const dx = mouse.x - dot.baseX;
+        const dy = mouse.y - dot.baseY;
+        const dist = Math.sqrt(dx * dx + dy * dy);
 
-          let targetX = dot.baseX;
-          let targetY = dot.baseY;
-          let alpha = 0.15;
+        let targetX = dot.baseX;
+        let targetY = dot.baseY;
+        let alpha = 0.15;
 
-          // Mouse repel effect and opacity pop
-          if (dist < hoverRadius) {
-              const force = (hoverRadius - dist) / hoverRadius;
-              targetX -= (dx / dist) * force * 20; // Repel distance
-              targetY -= (dy / dist) * force * 20;
-              alpha = 0.15 + force * 0.6; // Get brighter near mouse
-              ctx.fillStyle = `rgba(59, 130, 246, ${alpha})`; // primary color
-          } else {
-              ctx.fillStyle = `rgba(255, 255, 255, ${alpha})`; // standard foreground
-          }
+        // Mouse repel effect and opacity pop
+        if (dist < hoverRadius) {
+          const force = (hoverRadius - dist) / hoverRadius;
+          targetX -= (dx / dist) * force * 20; // Repel distance
+          targetY -= (dy / dist) * force * 20;
+          alpha = 0.15 + force * 0.6; // Get brighter near mouse
+          ctx.fillStyle = `rgba(59, 130, 246, ${alpha})`; // primary color
+        } else {
+          ctx.fillStyle = `rgba(255, 255, 255, ${alpha})`; // standard foreground
+        }
 
-          // Smooth interpolation back to base position
-          dot.x += (targetX - dot.x) * 0.1;
-          dot.y += (targetY - dot.y) * 0.1;
+        // Smooth interpolation back to base position
+        dot.x += (targetX - dot.x) * 0.1;
+        dot.y += (targetY - dot.y) * 0.1;
 
-          ctx.beginPath();
-          ctx.arc(dot.x, dot.y, radius, 0, Math.PI * 2);
-          ctx.fill();
+        ctx.beginPath();
+        ctx.arc(dot.x, dot.y, radius, 0, Math.PI * 2);
+        ctx.fill();
       });
 
       animationFrameId = requestAnimationFrame(render);
@@ -97,19 +97,19 @@ export default function Hero() {
     render();
 
     const handleResize = () => {
-        width = window.innerWidth;
-        height = window.innerHeight;
-        canvas.width = width;
-        canvas.height = height;
-        initDots();
+      width = window.innerWidth;
+      height = window.innerHeight;
+      canvas.width = width;
+      canvas.height = height;
+      initDots();
     }
     window.addEventListener("resize", handleResize);
 
     return () => {
-        cancelAnimationFrame(animationFrameId);
-        window.removeEventListener("mousemove", handleMouseMove);
-        window.removeEventListener("mouseleave", handleMouseLeave);
-        window.removeEventListener("resize", handleResize);
+      cancelAnimationFrame(animationFrameId);
+      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("mouseleave", handleMouseLeave);
+      window.removeEventListener("resize", handleResize);
     }
   }, []);
 
@@ -180,7 +180,7 @@ export default function Hero() {
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <a
-            href="https://drive.google.com/file/d/1OudwWxxBSZcgXmc6TzBhr1HiUoiiTCI9/view"
+            href="https://drive.google.com/file/d/1wiphhl4IZteP5mxn7_-GwYxy5-9nad6c/view?usp=sharing"
             target="_blank"
             className="group relative px-8 py-4 bg-foreground text-background rounded-full font-medium overflow-hidden transition-all hover:scale-105 flex items-center gap-2 w-full sm:w-auto justify-center"
           >
